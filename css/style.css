@@ -1,0 +1,16 @@
+.ng-isolate-scope .editableicon {
+    background: rgba(0, 0, 0, 0) url("../images/editcontainicon.png") no-repeat scroll 0 0!important;
+    width: 45px;
+    height: 45px;
+    font-size: 0px;
+    border: none;   cursor: pointer; display: none;
+}
+.ng-isolate-scope:hover .editableicon {
+    display: block !important;}
+
+.contentbind .editableicon{ background: url("../images/editcontainicon.png") no-repeat;}
+
+.hometoplogo{ width:419px; margin: 0 auto;}
+.hometoplogo img{ display: block; margin: 0 auto;}
+
+
