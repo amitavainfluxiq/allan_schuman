@@ -1,7 +1,7 @@
 'use strict';
 
 /* App Module */
-var r1headzappvar = angular.module('r1headzapp', ['app2','ui.router','angularValidator','ngCookies','ui.bootstrap','ngFileUpload','ui.tinymce']);
+var r1headzappvar = angular.module('r1headzapp', ['app2','user_module_app','ui.router','angularValidator','ngCookies','ui.bootstrap','ngFileUpload','ui.tinymce']);
 
 r1headzappvar.run(['$rootScope', '$state','contentservice','$uibModal','$log',function($rootScope, $state,contentservice,$uibModal,$log){
 
@@ -228,6 +228,29 @@ r1headzappvar.config(function($stateProvider, $urlRouterProvider,$locationProvid
             }
         }
     )
+        .state('test',{
+                url:"/test",
+                views: {
+
+                    'content': {
+                        templateUrl: 'partial/test.html' ,
+                        controller: 'test'
+                    },
+                    'header': {
+                        templateUrl: 'partial/header.html' ,
+                        controller: 'header'
+                    },
+                    'footer': {
+                        templateUrl: 'partial/footer.html' ,
+                        controller: 'header'
+                    },
+                    'modalview': {
+                        templateUrl: 'partial/modalview.html' ,
+                        controller: 'test'
+                    },
+                }
+            }
+        )
 
         .state('aboutus',{
             url:"/aboutus",
@@ -277,37 +300,13 @@ r1headzappvar.config(function($stateProvider, $urlRouterProvider,$locationProvid
         }
     )
 
-        .state('ourcreation',{
-            url:"/our-creation",
-            views: {
-
-                'content': {
-                    templateUrl: 'partial/ourcreation.html' ,
-                    controller: 'home'
-                },
-                'header': {
-                    templateUrl: 'partial/header.html' ,
-                    controller: 'header'
-                },
-                'footer': {
-                    templateUrl: 'partial/footer.html' ,
-                    controller: 'header'
-                },
-                'modalview': {
-                    templateUrl: 'partial/modalview.html' ,
-                    controller: 'home'
-                },
-            }
-        }
-    )
-
-        .state('incredible-story',{
-                url:"/incredible-story",
+        .state('areasofexpertise',{
+                url:"/areasofexpertise",
                 views: {
 
                     'content': {
-                        templateUrl: 'partial/incredible-story.html' ,
-                        controller: 'home'
+                        templateUrl: 'partial/areasofexpertise.html' ,
+                        controller: 'areasofexpertise'
                     },
                     'header': {
                         templateUrl: 'partial/header.html' ,
@@ -319,13 +318,58 @@ r1headzappvar.config(function($stateProvider, $urlRouterProvider,$locationProvid
                     },
                     'modalview': {
                         templateUrl: 'partial/modalview.html' ,
-                        controller: 'home'
+                        controller: 'areasofexpertise'
+                    },
+                }
+            }
+        )
+        .state('staff',{
+                url:"/staff",
+                views: {
+
+                    'content': {
+                        templateUrl: 'partial/staff.html' ,
+                        controller: 'staff'
+                    },
+                    'header': {
+                        templateUrl: 'partial/header.html' ,
+                        controller: 'header'
+                    },
+                    'footer': {
+                        templateUrl: 'partial/footer.html' ,
+                        controller: 'header'
+                    },
+                    'modalview': {
+                        templateUrl: 'partial/modalview.html' ,
+                        controller: 'staff'
                     },
                 }
             }
         )
 
+        .state('media-articles',{
+                url:"/media-articles",
+                views: {
 
+                    'content': {
+                        templateUrl: 'partial/media_articles.html' ,
+                        controller: 'mediaarticles'
+                    },
+                    'header': {
+                        templateUrl: 'partial/header.html' ,
+                        controller: 'header'
+                    },
+                    'footer': {
+                        templateUrl: 'partial/footer.html' ,
+                        controller: 'header'
+                    },
+                    'modalview': {
+                        templateUrl: 'partial/modalview.html' ,
+                        controller: 'mediaarticles'
+                    },
+                }
+            }
+        )
         .state('t2',{
             url:"/t2",
             views: {
@@ -421,6 +465,79 @@ r1headzappvar.config(function($stateProvider, $urlRouterProvider,$locationProvid
         }
     )
 
+
+
+
+
+        .state('addrole',{
+                url:"/add-role",
+                views: {
+
+                    'admin_header': {
+                        templateUrl: 'partial/admin_top_menu.html' ,
+                        //controller: 'admin_header'
+                    },
+                    'admin_left': {
+                        templateUrl: 'partial/admin_left.html' ,
+                        //  controller: 'admin_left'
+                    },
+                    'admin_footer': {
+                        templateUrl: 'partial/admin_footer.html' ,
+                    },
+                    'content': {
+                        templateUrl: 'partial/add_role.html' ,
+                        controller: 'addrole'
+                    },
+
+                }
+            }
+        )
+        .state('rolelist',{
+                url:"/rolelist",
+                views: {
+
+                    'admin_header': {
+                        templateUrl: 'partial/admin_top_menu.html' ,
+                        //controller: 'admin_header'
+                    },
+                    'admin_left': {
+                        templateUrl: 'partial/admin_left.html' ,
+                        //  controller: 'admin_left'
+                    },
+                    'admin_footer': {
+                        templateUrl: 'partial/admin_footer.html' ,
+                    },
+                    'content': {
+                        templateUrl: 'partial/rolelist.html' ,
+                        controller: 'rolelist'
+                    },
+
+                }
+            }
+        )
+
+        .state('edit-role',{
+                url:"/edit-role/:id",
+                views: {
+
+                    'admin_header': {
+                        templateUrl: 'partial/admin_top_menu.html' ,
+                        //controller: 'admin_header'
+                    },
+                    'admin_left': {
+                        templateUrl: 'partial/admin_left.html' ,
+                    },
+                    'admin_footer': {
+                        templateUrl: 'partial/admin_footer.html' ,
+                    },
+                    'content': {
+                        templateUrl: 'partial/edit_role.html' ,
+                        controller: 'editrole'
+                    },
+
+                }
+            }
+        )
 
 
     $locationProvider.html5Mode({
@@ -744,7 +861,8 @@ r1headzappvar.controller('contentlist', function($scope,$state,$http,$cookieStor
 
     $scope.totalItems = 0;
 
-    $scope.filterResult = [];    $http({
+    $scope.filterResult = [];
+    $http({
         method  : 'GET',
         async:   false,
         url     : $scope.adminUrl+'contentlist',
@@ -1267,7 +1385,7 @@ r1headzappvar.controller('header', function($scope,$state,$cookieStore,$rootScop
 });
 
 r1headzappvar.controller('home', function($http,$scope,$state,$cookieStore,$rootScope,contentservice,$uibModal) {
-
+//console.log(12);
     $scope.homesignupsubmit=function(){
 
         $http({
@@ -1316,7 +1434,12 @@ r1headzappvar.controller('home', function($http,$scope,$state,$cookieStore,$root
         });
         });
     }
-
+    $scope.functionscroll=function(){
+    console.log(11);
+        $('html, body').animate({
+            scrollTop: $(".homeaboutblock").offset().top
+        }, 2000);
+    }
 
 });
 
