@@ -2,7 +2,7 @@
     <div class="homebannerblock">
    <h2><content name='homebannertext1576a81443e5f9c7e1323638c' id='576a81443e5f9c7e1323638c' > </content></h2>
 
-        <a href="javascript:void(0)" class="homebannerlink1"><content name='homebannerlink1576a81883e5f9c7e1323638d' id='576a81883e5f9c7e1323638d' > </content></a>
+        <a  ui-sref="areasofexpertise" class="homebannerlink1"><content name='homebannerlink1576a81883e5f9c7e1323638d' id='576a81883e5f9c7e1323638d' > </content></a>
         <a ng-click="functionscroll()" href="javascript:void(0)" class="homebannerlink2"> <content name='homebannerlink2576a81bc3e5f9c7e1323638e' id='576a81bc3e5f9c7e1323638e' > </content></a>
 
 
@@ -73,7 +73,7 @@
         <div class="clearfix"></div>
 
 
-    <a href="javascript:void(0)" class="homeaboutblock4_link"><content name='homeaboutblock4_link576b8f63cc40b095105c1916' id='576b8f63cc40b095105c1916' > </content></a>
+    <a  ui-sref="areasofexpertise" class="homeaboutblock4_link"><content name='homeaboutblock4_link576b8f63cc40b095105c1916' id='576b8f63cc40b095105c1916' > </content></a>
 
     </div>
 
@@ -103,7 +103,7 @@
             <h4><content name='homeblock5_righttext1576bae28bacd72193e2858c2' id='576bae28bacd72193e2858c2' > </content></h4>
 
 <h5><content name='homeblock5_righttext2576bae46bacd72193e2858c3' id='576bae46bacd72193e2858c3' > </content></h5>
-            <a href="javascript:void(0)" class="homeaboutblock5_link">Learn More</a>
+            <a  ui-sref="areasofexpertise" class="homeaboutblock5_link"><content name='homeLearnMore2577103f9022e193a7aaf10b8' id='577103f9022e193a7aaf10b8' > </content></a>
 
 
 
@@ -124,21 +124,21 @@
 
 <div class="container-fluid homeaboutblock6">
     <div class="container">
-    <h2>Our Partners</h2>
-    <div class="our_partners_div">
-        <h2>Allan M. Shuman</h2>
-        <img src="../images/home6img1.jpg" class="partnersimg" >
-        <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            <br/> <br/>
-            It has survived not only five centuries,
-            but also the leap into electronic typesetting, remaining
-            essentially unchanged.</h3>
+    <h2><content name='homeOurPartners57710261c236cf2d5c8e6c57' id='57710261c236cf2d5c8e6c57' > </content></h2>
+    <div class="our_partners_div" ng-repeat="item in filterResult =( itemList | filter:{status:1,type:1,featured:1}) | limitTo:2 | orderBy:predicate:reverse">
+        <h2 ng-bind="item.title"></h2>
 
-        <div class="fullbio_box">   <a href="javascript:void(0)">Full Bio</a></div>
+        <div class="partnersimg">
+        <img ng-src="nodeserver/uploads/{{item.picture}}" >
+        </div>
+        <h3 ng-bind-html="item.description | limitHtml: 500"></h3>
+
+        <div class="fullbio_box">   <a ui-sref="staffdetails({id:item._id,name:getUrlName(item.title)})">Full Bio</a></div>
 
     </div>
-    <div class="our_partners_div our_partners_divright">
+
+
+    <!--<div class="our_partners_div our_partners_divright">
     <h2>Jacq Wilson</h2>
         <img src="../images/home6img2.jpg" class="partnersimg" >
         <h3>Jacq  Wilson  has  devoted  his  entire  career  to  helping  accident victims when they have been injured, harmed or inconvenienced by the  negligence  of  others.<br/><br/>
@@ -147,7 +147,7 @@
 
         <div class="fullbio_box">   <a href="javascript:void(0)">Full Bio</a></div>
 
-    </div>
+    </div>-->
 
 
 
@@ -156,7 +156,7 @@
 
 
     <div class="homebottomblock">
-        <a href="javascript:void(0)" class="viewmorelink">VIEW MORE</a>
+        <a ui-sref="staff" class="viewmorelink"><content name='homebottomVIEWMORE5771046a9dc8ac6f7adf30b4' id='5771046a9dc8ac6f7adf30b4' > </content></a>
         <div class="clearfix"></div>
 
     </div>
