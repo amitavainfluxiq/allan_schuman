@@ -47,12 +47,19 @@
                 <li> <a ui-sref="areasofexpertise" href="javascript:void(0)">Area of Expertise</a></li>
 
                 <li> <a ui-sref="staff" href="javascript:void(0)">Staff</a></li>
+                <li> <a ui-sref="testimonial" href="javascript:void(0)">Testimonials</a></li>
 
                 <li> <a ui-sref="media-articles" href="javascript:void(0)">Media</a></li>
 
-                <li> <a ui-sref="probono" href="javascript:void(0)">Pro Bono Work</a></li>
+                <li> <a ui-sref="probono" href="javascript:void(0)">Pro-Bono Work</a></li>
+                <li> <a  href="javascript:void(0)">SF Activities</a></li>
+
 
                 <li> <a ui-sref="contact" href="javascript:void(0)">Contact us</a></li>
+
+                <li> <a href="javascript:void(0)" ng-click="loginopen()"  ng-hide="rootUserid">Login</a></li>
+                <li><a ui-sref="logout" ng-show="rootUserid">Logout</a></li>
+                <li> <a ui-sref="dashboard"  ng-show="rootUserid">Dashboard</a></li>
 
 
 
@@ -70,21 +77,33 @@
 
         <div class="social_icon_block">
 
-            <a href="javascript:void(0)"><img src="../images/sicon1.png"></a>
+
+
+
+            <!--<div class="fb_newlink"> <a href="https://www.facebook.com/pages/Allan-M-Schuman-Associates/131376440532511
+" target="_blank">Like Us On <img src="../images/sicon1.png"></a>    </div>-->
+
+            <!--
+            <a href="https://www.facebook.com/pages/Allan-M-Schuman-Associates/131376440532511
+" target="_blank"><img src="../images/sicon1.png"></a>
 
             <a href="javascript:void(0)"><img src="../images/sicon2.png"></a>
 
-            <a href="javascript:void(0)"><img src="../images/sicon3.png"></a>
 
 
+            <a href="javascript:void(0)"><img src="../images/sicon3.png"></a>-->
+
+                 <div class="clearfix"></div>
 
         </div>
 
+<!--
 <div class="divlog">
     <a href="javascript:void(0)" ng-click="loginopen()" class="loginlink" ng-hide="rootUserid">Login</a>
     <a ui-sref="logout" class="loginlink" ng-show="rootUserid">Logout</a>
     <a ui-sref="dashboard" class="dashboard" ng-show="rootUserid">Dashboard</a>
 </div>
+-->
 
 
 
@@ -132,3 +151,4 @@
     </div>
 </script>
 
+<div id="lastblock"></div>

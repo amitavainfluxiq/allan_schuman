@@ -1,3 +1,20 @@
+<div id="fb-root"></div>
+<script>
+    FB = null;
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="allpagescrolldown" ng-show="scrollarrowshow && pagename != 'home'" style="top: auto; bottom: 0;" ng-click="scrolldownrec();">
+    <img src="../images/scrolldownarrow.png" alt="#">
+    <label>Scroll Down</label>
+</div>
+
+
+
 <div class="container-fluid topwrapper">
 
 <div class="mainlogowrapper">
@@ -21,15 +38,21 @@
                        <li><a ui-sref="home" href="javascript:void(0)"> Home </a></li>
                        <li><a ui-sref="areasofexpertise" href="javascript:void(0)"> Areas of Expertise</a></li>
                        <li><a ui-sref="staff" href="javascript:void(0)">Staff </a></li>
-                       <li><a ui-sref="media-articles" href="javascript:void(0)">Media </a></li>
-                       <li><a ui-sref="probono" href="javascript:void(0)">Pro-Bono Work </a></li>
+                       <li><a ui-sref="testimonial" href="javascript:void(0)">Testimonials</a></li>
+                       <li><a ui-sref="media-articles" >Media </a></li>
+                       <li><a ui-sref="probono" >Pro-Bono Work </a></li>
+                       <li><a  ui-sref="imagegallery">SF Activities</a></li>
+
                        <li><a ui-sref="contact" href="javascript:void(0)">Contact us </a></li>
 
 
 
 
+
                    </ul>
+                   <div style="float: right;margin-top: -43px" class="fb-like" data-href="https://www.facebook.com/AllanMSchuman" data-width="312" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
                    <div class="clearfix"></div>
+
                </div>
                <!-- /.navbar-collapse -->
 
